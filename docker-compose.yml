@@ -3,9 +3,10 @@ version: '3'
 services:
  
    node:
-     build:
-        context: ./node
+     image: node
      ports:
        - "${NODE_PORT:-8080}:8080"
      volumes:
        - ".:/app"
+     working_dir: /app
+     tty: true
